@@ -39,9 +39,11 @@ spec:
           livenessProbe:
             tcpSocket:
               port: pgcat
+            initialDelaySeconds: 5
           readinessProbe:
             tcpSocket:
               port: pgcat
+            initialDelaySeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
